@@ -1,5 +1,5 @@
 /* PLC Từ Số 0: chạy ngoại tuyến. Trang chính ưu tiên lấy bản mới từ mạng, mất mạng thì dùng bản đã lưu. */
-const C='plc0-v1';
+const C='plc0-v2';
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(['./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'])))});
 self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||!r.url.startsWith('http'))return;
